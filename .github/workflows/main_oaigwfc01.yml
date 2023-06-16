@@ -6,7 +6,7 @@ name: Build and deploy Node.js project to Azure Function App - oaigwfc01
 on:
   push:
     branches:
-      - main
+      - none
   workflow_dispatch:
 
 env:
