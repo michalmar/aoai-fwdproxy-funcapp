@@ -43,7 +43,10 @@ module.exports = async function (context, req) {
           res2.on('data', (chunk) => {  
               data += chunk;  
           });  
-          res2.on('end', () => {  
+          res2.on('end', () => {
+              // update res2.headers insert custom value newhostname = process.env.AOAI_HOSTNAME;
+              res2.headers['newhostname'] = newhostname;
+
               const response = {  
                   body: data,  
                   headers: res2.headers,
